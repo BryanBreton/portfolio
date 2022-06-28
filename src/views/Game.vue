@@ -13,10 +13,7 @@
           <div v-if="row === 7 && col === 4">Formations</div>
           <div v-if="row === 4 && col === 1">Contact</div>
           <div v-if="row === 4 && col === 7">Autres</div>
-          <img
-            v-if="getCoordonneeImage(col, row)"
-            src="../assets/bryan.png"
-          />
+          <img v-if="getCoordonneeImage(col, row)" src="../assets/bryan.png" />
         </div>
       </v-col>
     </v-row>
@@ -30,47 +27,74 @@ export default {
       imgY: 4,
     };
   },
+  created() {
+    this.resetCoordonnee();
+  },
+  beforeDestroy() {
+    this.resetCoordonnee();
+  },
   mounted() {
     window.addEventListener("keyup", this.onkeyup);
   },
   methods: {
+    resetCoordonnee() {
+      this.imgX = 4;
+      this.imgY = 4;
+    },
     getCoordonneeImage(x, y) {
       return x === this.imgX && y === this.imgY ? true : false;
     },
     checkNavigation() {
-      let navigation = false
-      if(this.imgX === 1 && this.imgY === 4){
-        this.$router.push('contact')
-        navigation = true
-      } else if (this.imgX === 7 && this.imgY === 4) {
-        navigation = true
-      } else if (this.imgX === 4 && this.imgY === 1) {
-        navigation = true
-      } else if (this.imgX === 4 && this.imgY === 7) {
-        navigation = true
+      let navigation = false;
+      switch (true) {
+        case this.imgX === 0 && this.imgY === 4:
+          navigation = true;
+          console.log(this.imgX, "navigation", this.imgY);
+          this.$router.push("contact");
+          break;
+        case this.imgX === 8 && this.imgY === 4:
+          navigation = true;
+          break;
+        case this.imgX === 4 && this.imgY === 0:
+          navigation = true;
+          break;
+        case this.imgX === 4 && this.imgY === 8:
+          navigation = true;
+          break;
       }
       console.log(this.imgX);
       console.log(this.imgY);
       console.log(navigation);
-      return navigation
+      return navigation;
     },
     onkeyup(event) {
       switch (event.code) {
         case "ArrowUp":
-          this.checkNavigation()
-          this.imgY--;
+          // on peut plus monter
+          if (!(this.imgY === 1 && this.imgX !== 4)) {
+            this.imgY = this.imgY - 1;
+            this.checkNavigation();
+          }
           break;
         case "ArrowDown":
-          this.checkNavigation()
-          this.imgY++;
+          if (!(this.imgY === 7 && this.imgX !== 4)) {
+            this.imgY++;
+            this.checkNavigation();
+          }
           break;
         case "ArrowLeft":
-          this.checkNavigation()
-          this.imgX--;
+          if (!(this.imgX === 1 && this.imgY !== 4)) {
+            this.imgX = this.imgX - 1;
+            this.checkNavigation();
+          }
           break;
         case "ArrowRight":
-          this.checkNavigation()
-          this.imgX++;
+          if (!(this.imgX === 7 && this.imgY !== 4)) {
+            console.log('ici')
+            this.imgX++;
+            this.checkNavigation();
+          }
+
           break;
       }
     },
