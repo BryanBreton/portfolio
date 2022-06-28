@@ -81,6 +81,8 @@ export default {
   height: 10px;
   border-radius: 50%;
   margin-right: 10px;
+  margin-left: 15px;
+  margin-bottom: 4%;
 }
 .mobile__promotion {
   color: white;
