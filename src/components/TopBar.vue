@@ -4,13 +4,12 @@
       <v-col cols="1">
         <img class="profileImage" justify="center" src="../assets/bryan.png" />
       </v-col>
-      <v-col cols="2"> <h1 class="nom">Bryan Breton</h1> </v-col>
-      <v-col cols="7"></v-col>
-      <v-col cols="2" class="nom">
-        <v-icon class="ml-4" x-large color="#0a66c2"> mdi-linkedin </v-icon>
-        <v-icon class="ml-4" x-large color="white"> mdi-instagram </v-icon>
-        <v-icon class="ml-4" x-large color="white"> mdi-gmail </v-icon>
-        <v-icon class="ml-4" x-large color="#1d9bf0"> mdi-twitter </v-icon>
+      <v-col cols="4"> <h1 class="nom">Bryan Breton</h1> </v-col>
+      <v-col class="nom" align="end">
+        <v-icon class="ml-2" x-large color="#0a66c2"> mdi-linkedin </v-icon>
+        <v-icon class="ml-2" x-large color="white"> mdi-instagram </v-icon>
+        <v-icon class="ml-2" x-large color="white"> mdi-gmail </v-icon>
+        <v-icon class="ml-2" x-large color="#1d9bf0"> mdi-twitter </v-icon>
       </v-col>
     </v-row>
   </div>
@@ -18,7 +17,6 @@
 <script>
 export default {
   name: "topBarDesktop",
-  
 };
 </script>
 <style>

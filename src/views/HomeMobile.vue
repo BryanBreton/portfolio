@@ -17,34 +17,16 @@
       <span> Available for freelance </span>
     </v-row>
 
-    <div class="barBasse">
-      <v-bottom-navigation>
-        <v-btn
-          ><span>Formations</span>
-
-          <v-icon x-large color="#0a66c2"> mdi-account-school </v-icon></v-btn
-        >
-
-        <v-btn
-          ><span>Experiences</span>
-
-          <v-icon x-large > mdi-desktop-classic </v-icon></v-btn
-        >
-
-        <v-btn
-          ><span>Contact</span>
-
-          <v-icon x-large color="#1d9bf0"> mdi-account-box </v-icon></v-btn
-        >
-      </v-bottom-navigation>
-    </div>
+    <nav-bar-mobile/>
   </div>
 </template>
 <script>
 import TopBarMobile from "../components/TopBarMobile.vue";
+import NavBarMobile from "../components/NavBarMobile.vue";
 export default {
   components: {
     TopBarMobile,
+    NavBarMobile
   },
 };
 </script>
@@ -66,13 +48,7 @@ export default {
     bottom: 30%;
     color: white
 }
-.barBasse {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 1000;
-}
+
 .mobile__promotion::before {
   background: #95cd71;
   content: "";
