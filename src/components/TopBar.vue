@@ -1,18 +1,21 @@
 <template>
-  <div class="topbar">
-    <v-row class="mt-10 ml-10">
-      <v-col cols="1">
-        <img class="profileImage" justify="center" src="../assets/bryan.png" />
-      </v-col>
-      <v-col cols="4"> <h1 class="nom">Bryan Breton</h1> </v-col>
-      <v-col class="nom" align="end">
-        <v-icon class="ml-2" x-large color="#0a66c2"> mdi-linkedin </v-icon>
-        <v-icon class="ml-2" x-large color="white"> mdi-instagram </v-icon>
-        <v-icon class="ml-2" x-large color="white"> mdi-gmail </v-icon>
-        <v-icon class="ml-2" x-large color="#1d9bf0"> mdi-twitter </v-icon>
-      </v-col>
-    </v-row>
-  </div>
+  <header class="topbar">
+    <v-card class="topbar__card">
+      <v-row class="mt-10 ml-10">
+        <!-- <v-col cols="1">
+          <img class="profileImage" justify="center" src="../assets/bryan.png" />
+        </v-col> -->
+        <v-col align="center"> <h1 class="topbar__nom">Bryan Breton</h1> </v-col>
+        <!-- <v-col class="nom" align="end">
+          <v-icon class="ml-2" x-large color="#0a66c2"> mdi-linkedin </v-icon>
+          <v-icon class="ml-2" x-large color="white"> mdi-instagram </v-icon>
+          <v-icon class="ml-2" x-large color="red"> mdi-gmail </v-icon>
+          <v-icon class="ml-2" x-large color="#1d9bf0"> mdi-twitter </v-icon>
+        </v-col> -->
+      </v-row>
+    </v-card>
+    
+  </header>
 </template>
 <script>
 export default {
@@ -20,12 +23,9 @@ export default {
 };
 </script>
 <style>
-.profileImage {
-  border-radius: 100%;
-  max-height: 7vh;
-}
-.nom {
-  color: white;
+.topbar__nom {
+  color: black;
+  font-size: 300% !important;
   font-family: "AmstelvarAlpha";
   font-style: italic;
 }
