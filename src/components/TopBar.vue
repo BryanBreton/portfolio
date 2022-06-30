@@ -26,8 +26,8 @@ export default {
 .topbar__nom {
   color: black;
   font-size: 300% !important;
-  font-family: "AmstelvarAlpha";
-  font-style: italic;
+  /* font-family: "AmstelvarAlpha"; */
+  /* font-style: italic; */
 }
 .mdi-instagram {
   background: radial-gradient(
