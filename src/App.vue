@@ -1,6 +1,7 @@
 <template>
   <v-app>
-
+    <top-bar v-if="!isMobile()"/>
+    <top-bar-mobile v-if="isMobile()"/>
     <v-main>
       <router-view />
     </v-main>
@@ -12,9 +13,13 @@
 <script>
 import NavBarMobile from "./components/NavBarMobile.vue"
 import HomeFooter from "./components/HomeFooter.vue"
+import TopBarMobile from "./components/TopBarMobile.vue"
+import TopBar from "./components/TopBar.vue"
 export default {
   name: "App",
   components:{
+    TopBarMobile,
+    TopBar,
     NavBarMobile,
     HomeFooter,
   },

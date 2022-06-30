@@ -1,23 +1,9 @@
 <template>
   <div>
-    
     <v-container>
       <v-row>
         <v-col cols="1"><v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon></v-col>
-
-        <!-- <v-col cols="4">
-          
-        </v-col> -->
         <v-col align="center" class="nom"><h1>Bryan Breton</h1></v-col>
-      </v-row>
-      <v-row>
-          <v-col align="center"><img
-            class="profileImageMobile"
-            justify="center"
-            src="../assets/bryan.png"
-          />
-
-          </v-col>
       </v-row>
     </v-container>
     <v-navigation-drawer

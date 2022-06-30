@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Contact from '../views/Contact.vue'
+import Formations from '../views/Formations.vue'
+import Experiences from '../views/Experiences.vue'
 import HomeMobile from '../views/HomeMobile.vue'
 
 Vue.use(VueRouter)
@@ -13,9 +14,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/contact',
-    name: 'Contact',
-    component: Contact
+    path: '/formations',
+    name: 'Formations',
+    component: Formations
+  },
+  {
+    path: '/experiences',
+    name: 'Experiences',
+    component: Experiences
   },
   {
     path: '/homeMobile',

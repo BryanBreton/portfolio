@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <top-bar />
     <v-container>
       <div class="home__content">
         <v-row>
@@ -24,12 +23,12 @@
         
         <v-row>
           <v-col cols="6" align="end">
-            <v-btn class="home__btn white--text" x-large rounded primary
+            <v-btn @click="redirect('Experiences')" class="home__btn white--text" x-large rounded primary
               >Experiences</v-btn
             >
           </v-col>
           <v-col cols="6" align="start">
-            <v-btn class="home__btn white--text" x-large rounded primary
+            <v-btn @click="redirect('Formations')" class="home__btn white--text" x-large rounded primary
               >Formations</v-btn
             >
           </v-col>
@@ -48,32 +47,16 @@
 
 <script>
 // @ is an alias to /src
-import TopBar from "@/components/TopBar";
-// import HomeFooter from "@/components/HomeFooter";
 import Competences from "@/components/Competences";
 import Outils from "@/components/Outils";
 export default {
   name: "Home",
-  created() {
-    // switch (this.$vuetify.breakpoint.name) {
-    //   case "xs":
-    //     this.$router.push("HomeMobile");
-    //     break;
-    //   case "sm":
-    //     this.$router.push("HomeMobile");
-    //     break;
-    //   case "md":
-    //     this.$router.push("HomeMobile");
-    //     break;
-    //   case "lg":
-    //     return 600;
-    //   case "xl":
-    //     return 800;
-    // }
+  methods: {
+    redirect(page) {
+      this.$router.push(page)
+    }
   },
   components: {
-    TopBar,
-    // HomeFooter,
     Competences,
     Outils,
   },

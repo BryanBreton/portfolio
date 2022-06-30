@@ -1,33 +1,36 @@
 <template>
-  <header class="topbar">
-    <v-card class="topbar__card">
-      <v-row class="mt-10 ml-10">
-        <!-- <v-col cols="1">
-          <img class="profileImage" justify="center" src="../assets/bryan.png" />
-        </v-col> -->
+  <div class="topbar">
+    <v-container>
+      <v-row>
+        <v-col cols="1" align="center" v-if="!isHome()"> <v-icon @click="redirectHome()" class="topbar__arrow" x-large>mdi-arrow-left-circle</v-icon> </v-col>
         <v-col align="center"> <h1 class="topbar__nom">Bryan Breton</h1> </v-col>
-        <!-- <v-col class="nom" align="end">
-          <v-icon class="ml-2" x-large color="#0a66c2"> mdi-linkedin </v-icon>
-          <v-icon class="ml-2" x-large color="white"> mdi-instagram </v-icon>
-          <v-icon class="ml-2" x-large color="red"> mdi-gmail </v-icon>
-          <v-icon class="ml-2" x-large color="#1d9bf0"> mdi-twitter </v-icon>
-        </v-col> -->
       </v-row>
-    </v-card>
+      
+    </v-container>
     
-  </header>
+    
+  </div>
 </template>
 <script>
 export default {
   name: "topBarDesktop",
+  methods: {
+    redirectHome() {
+      this.$router.push('/')
+    },
+    isHome() {
+      return window.location.pathname === "/" ? true : false
+    }
+  }
 };
 </script>
 <style>
 .topbar__nom {
   color: black;
   font-size: 300% !important;
-  /* font-family: "AmstelvarAlpha"; */
-  /* font-style: italic; */
+}
+.topbar__arrow {
+  margin-top: 30%;
 }
 .mdi-instagram {
   background: radial-gradient(
